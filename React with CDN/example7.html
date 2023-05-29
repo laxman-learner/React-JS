@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React First App</title>
+
+    <!-- React CDN Links -->
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      function MyApp() {
+        // let myHeading = React.createElement("h3", null, "What is React ?");
+        // let myPara = React.createElement("p",null,"React is a component based JS Library used by");
+        // let myList = React.createElement("ul", null, [
+        //   React.createElement("li", null, "Facebook"),
+        //   React.createElement("li", null, "Instagram"),
+        //   React.createElement("li", null, "Twitter"),
+        // ]); This whole code can be replaced by following single line of code
+
+        let myElement = React.createElement(
+          "div",
+          null,
+          React.createElement("h3", null, "What is React ?"),
+          React.createElement(
+            "p",
+            null,
+            "React is a component based JS Library used by"
+          ),
+          React.createElement("ul", null, [
+            React.createElement("li", null, "Facebook"),
+            React.createElement("li", null, "Instagram"),
+            React.createElement("li", null, "Twitter"),
+          ])
+        );
+        return myElement;
+      }
+
+      ReactDOM.render(
+        React.createElement(MyApp),
+        document.querySelector("#root")
+      );
+    </script>
+  </body>
+</html>
