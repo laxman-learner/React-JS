@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>React With JSX</title>
+    <title>Conditional Rendering in React</title>
     <!-- React CDN Link -->
     <script
       crossorigin
@@ -17,33 +17,27 @@
 
     <!-- Bable Link -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <style>
-      h2 {
-        color: orange;
-      }
-    </style>
   </head>
   <body>
     <div id="root"></div>
 
-    <!-- React JSX -->
+    <!-- Conditional Rendering with ternary operator -->
     <script type="text/babel">
-      function MyClock() {
-        let now = new Date().toLocaleString();
-        let myElement = (
+      function getNumber() {
+        const myNums = [20, 37, 45, 877, 98, 39, 84, 2084, 475, 71];
+        const num = myNums[Math.floor(Math.random() * myNums.length)];
+        return num;
+      }
+      function MyNum() {
+        const num = getNumber();
+        return (
           <div>
-            <h2>My Clock Component </h2>
-            <p>Current Date and Time are {now}</p>
+            <p>Number is {num}</p>
+            <small>It is an {num % 2 == 0 ? "Even" : "Odd"} Number</small>
           </div>
         );
-        return myElement;
       }
-      function timeUpdate() {
-        ReactDOM.render(<MyClock />, document.querySelector("#root"));
-      }
-
-      setInterval(timeUpdate, 1000);
+      ReactDOM.render(<MyNum />, document.querySelector("#root"));
     </script>
   </body>
 </html>
