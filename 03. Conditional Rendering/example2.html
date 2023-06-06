@@ -33,7 +33,9 @@
         return (
           <div>
             <p>Number is {num}</p>
-            <small>It is an {num % 2 == 0 ? "Even" : "Odd"} Number</small>
+            <small>
+              It is an {num % 2 == 0 ? <b>Even</b> : <b>Odd</b>} Number
+            </small>
           </div>
         );
       }
