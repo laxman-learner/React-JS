@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React First App</title>
+
+    <!-- React CDN Links -->
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      function MyApp() {
+        let myElement = React.createElement(
+          "h1",
+          { align: "center" },
+          "React Rocks !!!"
+        );
+        return myElement;
+      }
+      //   let element = React.createElement(MyApp);
+      //   let myDiv = document.querySelector("#root");
+      //   ReactDOM.render(element, myDiv);
+      //   These three lines can also be shortened into following code
+      ReactDOM.render(
+        React.createElement(MyApp),
+        document.querySelector("#root")
+      );
+    </script>
+  </body>
+</html>
