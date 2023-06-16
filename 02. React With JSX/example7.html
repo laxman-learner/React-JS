@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React With JSX</title>
+    <!-- React CDN Link -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <!-- Bable Link -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React JSX -->
+    <script type="text/babel">
+      // returning javaScript expressions in JSX
+
+      function ContactList() {
+        let heading = <h1>Contact List </h1>;
+        let list = (
+          <ul>
+            <li>Web Developer</li>
+            <li>Web Designer</li>
+            <li>Web Architect</li>
+          </ul>
+        );
+        return (
+          <div>
+            {heading}
+            {list}
+          </div>
+        );
+        // OR let myDiv = (<div>{heading}{list}</div>);
+        // return myDiv;
+      }
+      ReactDOM.render(<ContactList />, document.querySelector("#root"));
+    </script>
+  </body>
+</html>
